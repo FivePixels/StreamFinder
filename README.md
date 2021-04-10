@@ -2,6 +2,8 @@
 
 `npm i puppeteer`
 
+`npm i mongodb`
+
 `node [filename]`
 
 ## Credits

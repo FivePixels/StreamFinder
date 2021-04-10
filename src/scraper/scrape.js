@@ -1,8 +1,14 @@
 const puppeteer = require('puppeteer');
+const mongodb = require('mongodb')
 
-async function performSearch(query) {
+// Specifically for scraping
+// Stores in database once finished scraping
+// query is the search string (title of movie or show) and the type (music, show, movie)
+// will be used
+
+async function performSearch(query, type) {
   const browser = await puppeteer.launch({
-    headless: false
+    headless: true
   });
   const pages = await browser.pages();
   const page = pages[0];
@@ -20,6 +26,8 @@ async function performSearch(query) {
   }
   console.log(streamingPlatforms);
   console.log(streamingPrices);
+  // do the database storage
+  await browser.close();
 }
 
-// performSearch("sorry to bother you")
+// performSearch('spongebob', 'tv');
