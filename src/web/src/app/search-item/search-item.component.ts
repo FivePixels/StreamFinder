@@ -9,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class SearchItemComponent implements OnInit {
     @Input() model: any;
     isRated: boolean;
+
     constructor() {}
 
     ngOnInit(): void {}
+
     getImage() {
         return 'https://image.tmdb.org/t/p/original' + this.model.poster_path;
     }

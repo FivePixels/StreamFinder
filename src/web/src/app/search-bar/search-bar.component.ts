@@ -11,18 +11,15 @@ import { MovieTVService } from '../movie-tv.service';
 })
 export class SearchBarComponent implements OnInit {
     myControl = new FormControl();
-    keyword = 'robot';
-    isLoading: boolean;
     color: ThemePalette = 'accent';
+    isLoading: boolean;
     options;
-    baseUrl =
-        'https://api.themoviedb.org/3/search/movie?api_key=b745fd575abc6a839db385885fb2aee0&query=';
-    hasItems: boolean = true;
-    isEmpty: boolean = false;
+    hasItems = true;
+    isEmpty = false;
 
-    constructor(private movieservice: MovieTVService) {}
+    constructor(private tmdbService: MovieTVService) {}
 
-    ngOnInit(): void {
+    ngOnInit() {
         this.myControl.valueChanges
             .pipe(
                 debounceTime(1000),
@@ -30,9 +27,9 @@ export class SearchBarComponent implements OnInit {
                 switchMap((value) => {
                     if (value) {
                         this.isEmpty = false;
-                        return this.movieservice.search(value).pipe(
-                            map((response: any) =>
-                                response.results.filter(
+                        return this.tmdbService.search(value).pipe(
+                            map((values: any) =>
+                                values.results.filter(
                                     (x) => x.media_type !== 'person'
                                 )
                             ),
@@ -45,6 +42,7 @@ export class SearchBarComponent implements OnInit {
                 })
             )
             .subscribe((results: any) => {
+                console.log(results);
                 this.hasItems = true;
                 if (results.length === 0) {
                     this.hasItems = false;

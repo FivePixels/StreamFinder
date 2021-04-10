@@ -11,10 +11,6 @@ export class MovieTVService {
     constructor(private service: HttpClient) {}
 
     search(query: string) {
-        return this.service.get(this.baseUrl + query).pipe(
-            tap((response) => {
-                return response;
-            })
-        );
+        return this.service.get(this.baseUrl + query);
     }
 }

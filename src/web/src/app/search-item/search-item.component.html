@@ -1,34 +1,26 @@
 <div class="row p-0">
-  <div class="col-md-2 text-center p-1">
-    <img class="example-option-img" [src]="getImage()" width="70px" />
-  </div>
-  <div class="searchitem-text col-md-8">
-    <div class="movie-title font-weight-bold text-uppercase">
-      {{ getTitle() }}
+    <div class="col-md-2 col-sm-2 text-center p-1">
+        <img [src]="getImage()" alt="Not Found" class="example-option-img" />
     </div>
-    <div class="pubYear" style="margin-top: 10px">
-      <strong></strong>
-
-      <small
-        style="
-          background-color: white;
-          color: #3f51b5;
-          padding: 5px;
-          box-sizing: border-box;
-        "
-        >{{ getYear() }} | {{ model.media_type | titlecase }}</small
-      >
+    <div class="search-item-text col-sm-8 col-md-8">
+        <div class="movie-title font-weight-bold text-uppercase">
+            {{ getTitle() }}
+        </div>
+        <div class="year-wrapper">
+            <small class="year-wrapper-content">
+                {{ getYear() }} | {{ model.media_type | titlecase }}
+            </small>
+        </div>
     </div>
-  </div>
-  <div class="rating col-md-2 pl-0 pr-1">
-    <span class="material-icons mt-3"> star_rate </span>
-    <div class="" style="line-height: 0.9rem">
-      <strong
-        >{{ getRating()
-        }}<small class="d-md-none d-lg-inline-block" *ngIf="isRated"
-          >/10</small
-        ></strong
-      >
+    <div class="rating col-sm-2 col-md-2 pl-0 pr-1">
+        <span class="material-icons mt-3">star_rate</span>
+        <div class="rating-content">
+            <strong>
+                {{ getRating() }}
+                <small class="d-sm-none d-lg-inline-block" *ngIf="isRated">
+                    /10
+                </small>
+            </strong>
+        </div>
     </div>
-  </div>
 </div>
