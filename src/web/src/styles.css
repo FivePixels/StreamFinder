@@ -3,6 +3,7 @@
 html,
 body {
     height: 100%;
+    min-width: 512px;
 }
 body {
     margin: 0;
@@ -74,34 +75,31 @@ body {
 }
 
 .cards-list {
-    z-index: 0;
-    width: 100%;
     display: flex;
     justify-content: space-around;
+    width: 100%;
     flex-wrap: wrap;
 }
 
 .card {
-    margin: 30px auto;
-    width: 200px;
-    height: 200px;
-    border-radius: 40px;
-    box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25),
-        -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
     cursor: pointer;
-    transition: 0.4s;
+    width: 120px;
+    border-radius: 30px;
+    height: 120px;
+    box-shadow: 3px 3px 15px 5px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
 }
 
-.card .card_image {
+.card .card-img {
     width: inherit;
     height: inherit;
-    border-radius: 40px;
+    border-radius: 30px;
 }
 
-.card .card_image img {
+.card .card-img img {
     width: inherit;
     height: inherit;
-    border-radius: 40px;
+    border-radius: 30px;
     object-fit: contain;
 }
 
@@ -117,8 +115,7 @@ body {
 
 .card:hover {
     transform: scale(0.9, 0.9);
-    box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25),
-        -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
+    box-shadow: 3px 3px 30px 5px rgba(255, 255, 255, 0.3);
 }
 
 .title-white {

@@ -1,5 +1,6 @@
 import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { AppService } from '../app.service';
 
 @Component({
     selector: 'app-search-item',
@@ -10,7 +11,7 @@ export class SearchItemComponent implements OnInit {
     @Input() model: any;
     isRated: boolean;
 
-    constructor() {}
+    constructor(private service: AppService) {}
 
     ngOnInit(): void {}
 
@@ -46,5 +47,9 @@ export class SearchItemComponent implements OnInit {
         }
         this.isRated = true;
         return this.model.vote_average;
+    }
+
+    storeData() {
+        this.service.emitData(this.model);
     }
 }

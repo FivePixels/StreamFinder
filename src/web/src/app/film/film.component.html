@@ -1,0 +1,43 @@
+<div class="w-100 main-div-wrapper">
+    <img [src]="getImage() ? getImage() : ''" class="img-s" />
+
+    <div class="wrapper-content" *ngIf="!loading">
+        <div class="wrapper-wrapper container">
+            <div class="main-div container row" style="color: white">
+                <div class="description m-auto p-5">
+                    <h1 class="mt-3 mb-4 col-md-8 pl-0">
+                        <strong> {{ model.original_title }}</strong>
+                    </h1>
+                    <p class="mt-5">
+                        {{ model.overview }}
+                    </p>
+                </div>
+            </div>
+            <div class="h-auto container row">
+                <div class="main-div container p-5">
+                    <h1 class="" style="color: white">Watch it here</h1>
+                    <div class="cards-list pt-4">
+                        <div class="card">
+                            <div class="card-img">
+                                <img
+                                    class="p-3"
+                                    src="https://iconape.com/wp-content/png_logo_vector/google-play-movies-tv.png"
+                                />
+                            </div>
+                            <div class="card_title"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper-content" *ngIf="loading">
+        <div class="wrapper-wrapper container">
+            <div
+                class="container main-div d-flex justify-content-center align-items-center h-100"
+            >
+                <mat-spinner color="primary" mode="indeterminate"></mat-spinner>
+            </div>
+        </div>
+    </div>
+</div>

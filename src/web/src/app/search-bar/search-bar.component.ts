@@ -4,6 +4,7 @@ import { ThemePalette } from '@angular/material/core';
 import { of } from 'rxjs';
 import { debounceTime, finalize, map, switchMap, tap } from 'rxjs/operators';
 import { MovieTVService } from '../movie-tv.service';
+import { AppService } from '../app.service';
 @Component({
     selector: 'app-search-bar',
     templateUrl: './search-bar.component.html',
@@ -17,7 +18,10 @@ export class SearchBarComponent implements OnInit {
     hasItems = true;
     isEmpty = false;
 
-    constructor(private tmdbService: MovieTVService) {}
+    constructor(
+        private appService: AppService,
+        private tmdbService: MovieTVService
+    ) {}
 
     ngOnInit() {
         this.myControl.valueChanges
@@ -42,7 +46,6 @@ export class SearchBarComponent implements OnInit {
                 })
             )
             .subscribe((results: any) => {
-                console.log(results);
                 this.hasItems = true;
                 if (results.length === 0) {
                     this.hasItems = false;
@@ -50,5 +53,9 @@ export class SearchBarComponent implements OnInit {
                 }
                 this.options = results.splice(0, 5);
             });
+    }
+
+    storeData(model: any) {
+        this.appService.subsriber$.subscribe((x) => console.log(x));
     }
 }

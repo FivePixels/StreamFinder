@@ -14,12 +14,17 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { SearchItemComponent } from './search-item/search-item.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatInputModule } from '@angular/material/input';
+import { FilmComponent } from './film/film.component';
+import { WatchProviderItemComponent } from './watch-provider-item/watch-provider-item.component';
+
 @NgModule({
     declarations: [
         AppComponent,
         HomeComponent,
         SearchBarComponent,
         SearchItemComponent,
+        FilmComponent,
+        WatchProviderItemComponent,
     ],
     imports: [
         BrowserModule,
