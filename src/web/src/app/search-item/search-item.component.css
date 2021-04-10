@@ -3,7 +3,6 @@
 }
 
 .year-wrapper {
-    margin-top: 10px;
 }
 
 .year-wrapper-content {
@@ -11,4 +10,5 @@
     color: #3f51b5;
     padding: 5px;
     box-sizing: border-box;
+    font-size: 1.3rem;
 }

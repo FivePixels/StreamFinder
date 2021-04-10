@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap");
+@import "~bootstrap-icons/font/bootstrap-icons.css";
 html,
 body {
     height: 100%;
@@ -11,13 +12,14 @@ body {
 }
 
 .mat-option {
+    font-family: "Playfair Display", sans-serif;
     height: 115px !important;
-    font-family: cascadia code !important;
     font-size: large !important;
     padding: 10px !important;
 }
 .mat-form-field {
-    font-family: cascadia code !important;
+    font-family: "Playfair Display", sans-serif;
+    font-weight: 500;
     font-size: large !important;
 }
 .mat-form-field-flex {
@@ -53,18 +55,23 @@ body {
     white-space: normal;
 }
 
-.searchitem-text .movie-title {
-    font-size: 23px;
+.search-item-text .movie-title {
+    font-size: 1.5rem;
 }
 
 .rating {
     text-align: center;
 }
-.rating .material-icons {
-    font-size: 2rem;
-    color: yellow;
+.rating div i {
+    color: #ffdc3f;
 }
 
+.rating-content {
+    font-size: 1.5rem;
+}
+.mat-input-element {
+    font-size: x-large !important;
+}
 .mat-autocomplete-panel {
     max-height: 600px !important;
 }
@@ -131,4 +138,33 @@ body {
         /* On small screens, we are no longer using row direction but column */
         flex-direction: column;
     }
+}
+
+.cover-img {
+    -webkit-mask-image: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(rgba(0, 0, 0, 1)),
+        to(rgba(0, 0, 0, 0))
+    );
+    mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+}
+
+.theading {
+    color: white;
+    padding: 0px 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.icon:hover {
+    color: gray !important;
+    transition: 0.4s;
 }

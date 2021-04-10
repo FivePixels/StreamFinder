@@ -26,7 +26,6 @@ export class FilmComponent implements OnInit {
             this.type = x.get('type');
             this.id = x.get('id');
             //Start Scraping and loading the spinner
-            this.loading = false;
 
             //this.data.getUsers().subscribe((data) => {
             // this.users = data;
@@ -35,9 +34,9 @@ export class FilmComponent implements OnInit {
         });
         this.service.searchById(this.type, +this.id).subscribe((x: any) => {
             this.model = x;
+            this.loading = false;
             console.log(this.model);
         });
-        console.log(this.model);
         //
         //Get Providers List
         /*this.service
@@ -52,6 +51,8 @@ export class FilmComponent implements OnInit {
     }
 
     getImage() {
-        return 'https://image.tmdb.org/t/p/original' + this.model.poster_path;
+        return this.model
+            ? 'https://image.tmdb.org/t/p/original' + this.model.poster_path
+            : '';
     }
 }

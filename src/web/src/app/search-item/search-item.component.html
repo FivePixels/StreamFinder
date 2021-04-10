@@ -12,9 +12,13 @@
             </small>
         </div>
     </div>
-    <div class="rating col-sm-2 col-md-2 pl-0 pr-1">
-        <span class="material-icons mt-3">star_rate</span>
-        <div class="rating-content">
+    <div class="rating col-sm-2 col-md-2 pl-0 py-2 pr-1">
+        <div class="row d-flex justify-content-center align-items-center">
+            <i class="bi bi-star-fill" style="font-size: 35px"></i>
+        </div>
+        <div
+            class="rating-content row d-flex justify-content-center align-items-center"
+        >
             <strong>
                 {{ getRating() }}
                 <small class="d-sm-none d-lg-inline-block" *ngIf="isRated">
