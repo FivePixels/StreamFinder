@@ -1,0 +1,137 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-option {
+    height: 115px !important;
+    font-family: cascadia code !important;
+    font-size: large !important;
+    padding: 10px !important;
+}
+.mat-form-field {
+    font-family: cascadia code !important;
+    font-size: large !important;
+}
+.mat-form-field-flex {
+    border-radius: 10px !important;
+}
+
+.mat-focused .mat-form-field-outline-end {
+    border-radius: 0px 5px 0px 0px !important;
+}
+
+.mat-focused .mat-form-field-outline-start {
+    border-radius: 5px 0px 0px 0px !important;
+}
+
+.mat-autocomplete-panel {
+    border-radius: 0px 0px 15px 15px !important;
+    box-shadow: -3px 3px 5px gray !important;
+}
+
+.mat-option:after {
+    content: "";
+    width: 100%;
+    border-bottom: solid 3px gray;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    bottom: 0;
+}
+
+.searchitem-text {
+    line-height: 1.2rem;
+    padding: 10px;
+    white-space: normal;
+}
+
+.searchitem-text .movie-title {
+    font-size: 23px;
+}
+
+.rating {
+    text-align: center;
+}
+.rating .material-icons {
+    font-size: 2rem;
+    color: yellow;
+}
+
+.mat-autocomplete-panel {
+    max-height: 600px !important;
+}
+
+.mat-option-text {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+
+.cards-list {
+    z-index: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    margin: 30px auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 40px;
+    box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25),
+        -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.card .card_image {
+    width: inherit;
+    height: inherit;
+    border-radius: 40px;
+}
+
+.card .card_image img {
+    width: inherit;
+    height: inherit;
+    border-radius: 40px;
+    object-fit: contain;
+}
+
+.card .card_title {
+    text-align: center;
+    border-radius: 0px 0px 40px 40px;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: -80px;
+    height: 40px;
+}
+
+.card:hover {
+    transform: scale(0.9, 0.9);
+    box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25),
+        -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
+}
+
+.title-white {
+    color: white;
+}
+
+.title-black {
+    color: black;
+}
+
+@media all and (max-width: 500px) {
+    .card-list {
+        /* On small screens, we are no longer using row direction but column */
+        flex-direction: column;
+    }
+}
