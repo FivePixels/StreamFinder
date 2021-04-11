@@ -1,0 +1,41 @@
+<form class="example-form">
+    <mat-form-field
+        style="width: 100%"
+        class="example-full-width"
+        appearance="outline"
+    >
+        <mat-label style="font-size: x-large">Discover</mat-label>
+        <input
+            type="text"
+            placeholder="Movies / TV Shows"
+            aria-label="Number"
+            matInput
+            [formControl]="myControl"
+            [matAutocomplete]="auto"
+        />
+        <mat-icon matSuffix>search</mat-icon>
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+            <mat-option
+                class="is-loading"
+                *ngIf="isLoading && hasItems && !isEmpty"
+            >
+                <mat-spinner [color]="color" diameter="50"></mat-spinner>
+            </mat-option>
+            <mat-option *ngIf="!hasItems && !isEmpty">
+                No Movies found
+            </mat-option>
+            <ng-container *ngIf="!isLoading && hasItems">
+                <mat-option
+                    *ngFor="let option of options"
+                    [value]="option.original_title"
+                >
+                    <app-search-item
+                        (click)="storeData(option)"
+                        [model]="option"
+                        [routerLink]="['', option.media_type, option.id]"
+                    ></app-search-item>
+                </mat-option>
+            </ng-container>
+        </mat-autocomplete>
+    </mat-form-field>
+</form>

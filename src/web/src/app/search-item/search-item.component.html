@@ -1,0 +1,32 @@
+<div class="row p-0">
+    <div class="col-md-2 col-sm-2 text-center p-1">
+        <img [src]="getImage()" alt="Not Found" class="example-option-img" />
+    </div>
+    <div class="search-item-text col-sm-8 col-md-8">
+        <div
+            class="movie-title font-weight-bold text-capitalize overflow-hidden"
+        >
+            {{ getTitle() }}
+        </div>
+        <div class="year-wrapper">
+            <small class="year-wrapper-content">
+                {{ getYear() }} | {{ model.media_type | uppercase }}
+            </small>
+        </div>
+    </div>
+    <div class="rating col-sm-2 col-md-2 pl-0 py-2 pr-1">
+        <div class="row d-flex justify-content-center align-items-center">
+            <i class="bi bi-star-fill" style="font-size: 35px"></i>
+        </div>
+        <div
+            class="rating-content row d-flex justify-content-center align-items-center"
+        >
+            <strong>
+                {{ getRating() }}
+                <small class="d-sm-none d-lg-inline-block" *ngIf="isRated">
+                    /10
+                </small>
+            </strong>
+        </div>
+    </div>
+</div>

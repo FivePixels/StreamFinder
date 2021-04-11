@@ -1,0 +1,28 @@
+.main-div-wrapper {
+    overflow: hidden;
+    position: relative;
+    height: auto;
+    width: 100%;
+    font-family: "Playfair Display", sans-serif;
+}
+.img-s {
+    border-radius: 20px;
+    box-shadow: 5px 5px 20px 3px gray, -5px -5px 20px 3px gray;
+}
+.wrapper-content {
+    width: 100%;
+}
+
+.main-div {
+    position: relative;
+}
+
+.description {
+    position: relative;
+}
+
+.wrapper-wrapper {
+    background-color: rgba(0, 0, 0, 0.8);
+    min-height: 100%;
+    font-size: 20px;
+}

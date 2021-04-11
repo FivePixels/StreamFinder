@@ -1,0 +1,14 @@
+.mat-option {
+    background-color: #3f51b5;
+    color: white;
+    width: auto;
+}
+
+.mat-option:hover {
+    background-color: #3f79f6;
+}
+
+.is-loading ::ng-deep .mat-option-text {
+    display: flex;
+    justify-content: center;
+}
