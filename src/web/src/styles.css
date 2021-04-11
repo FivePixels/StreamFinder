@@ -97,6 +97,7 @@ body {
     height: 120px;
     box-shadow: 3px 3px 15px 5px rgba(0, 0, 0, 0.3);
     transition: 0.3s;
+    margin: 20px auto;
 }
 
 .card .card-img {
@@ -117,8 +118,7 @@ body {
     border-radius: 0px 0px 40px 40px;
     font-family: sans-serif;
     font-weight: bold;
-    font-size: 30px;
-    margin-top: -80px;
+    font-size: 20px;
     height: 40px;
 }
 
@@ -129,10 +129,6 @@ body {
 
 .title-white {
     color: white;
-}
-
-.title-black {
-    color: black;
 }
 
 @media all and (max-width: 500px) {

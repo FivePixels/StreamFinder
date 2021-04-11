@@ -10,7 +10,7 @@ export class ScrapeService {
     constructor(private service: HttpClient) {}
 
     performCheck(id, query, type) {
-        return this.service.get(this.apiURL, {
+        return this.service.get(this.apiURL + 'performCheck', {
             params: { id: id, query: query, type: type },
         });
     }

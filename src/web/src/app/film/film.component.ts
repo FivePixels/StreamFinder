@@ -11,12 +11,13 @@ import { ScrapeService } from '../scrape.service';
     styleUrls: ['./film.component.css'],
 })
 export class FilmComponent implements OnInit {
-    providers = ['Netflix'];
+    providers;
     model: any;
     loading: boolean = true;
     img: string;
     type: string;
     id: string;
+    prices;
     constructor(
         private route: ActivatedRoute,
         private service: MovieTVService,
@@ -26,38 +27,29 @@ export class FilmComponent implements OnInit {
         this.route.paramMap.subscribe((x) => {
             this.type = x.get('type');
             this.id = x.get('id');
-            //Start Scraping and loading the spinner
-
-            //this.data.getUsers().subscribe((data) => {
-            // this.users = data;
-            //});
-            ///
         });
         this.service.searchById(this.type, +this.id).subscribe((x: any) => {
+            let a;
             this.model = x;
-            console.log(this.model);
-        });
-        this.scraper
-            .performCheck(this.id, this.model, this.type)
-            .subscribe((x) => {
+            if (this.type === 'tv') {
+                a = this.model.name;
+            } else {
+                a = this.model.original_title;
+            }
+            this.scraper.performCheck(this.id, a, this.type).subscribe((x) => {
+                this.providers = x[0];
+                this.prices = x[1];
                 this.loading = false;
             });
-        //
-        //Get Providers List
-        /*this.service
-            .getProviderList(this.model.media_type, this.model.id)
-            .pipe(
-                map((x: any) => {
-                    x.results.US.flatrate;
-                })
-            )
-            .subscribe((x) => (this.model.watch_providers = x));
-        console.log(this.model.watch_providers);*/
+        });
     }
 
     getImage() {
         return this.model
             ? 'https://image.tmdb.org/t/p/original' + this.model.poster_path
             : '';
+    }
+    getPrice(i: number) {
+        return this.prices[i];
     }
 }
