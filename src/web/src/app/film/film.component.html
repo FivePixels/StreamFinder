@@ -61,13 +61,15 @@
             </div>
         </div>
     </div>
-    <div class="wrapper-content" *ngIf="loading">
-        <div class="wrapper-wrapper container">
-            <div
-                class="container main-div d-flex justify-content-center align-items-center h-100"
-            >
-                <mat-spinner color="primary" mode="indeterminate"></mat-spinner>
-            </div>
-        </div>
+    <div
+        class="container"
+        *ngIf="loading"
+        style="position: fixed; top: 50%; left: 45%"
+    >
+        <mat-spinner
+            color="primary"
+            mode="indeterminate"
+            [diameter]="60"
+        ></mat-spinner>
     </div>
 </div>

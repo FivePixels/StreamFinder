@@ -56,7 +56,7 @@ export class FilmComponent implements OnInit {
         private route: ActivatedRoute,
         private service: MovieTVService,
         private scraper: ScrapeService
-    ) {}
+    ) { }
     ngOnInit(): void {
         this.route.paramMap.subscribe((x) => {
             this.type = x.get('type');
@@ -89,9 +89,9 @@ export class FilmComponent implements OnInit {
 
     getProviderImage(i: number) {
         console.log(
-            (this.providers[i] as string).toLowerCase().replace(/ /g, '')
+            (this.providers[i] as string).toLowerCase().replace(/ /g, '').replace('+', 'plus')
         );
-        return (this.providers[i] as string).toLowerCase().replace(/ /g, '');
+        return (this.providers[i] as string).toLowerCase().replace(/ /g, '').replace('+', 'plus');
     }
 
     getLink(i: number) {
