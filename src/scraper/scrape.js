@@ -15,8 +15,10 @@ exports.performSearch = async function (id, query, type) {
     const tv = database.collection("tv");
     const movie = database.collection('movie')
     const browser = await puppeteer.launch({
+      ignoreDefaultArgs: ["--disable-extensions"],
+      args: [`--no-sandbox`, `--no-zygote`, `--single-process`, `--args`, `--disable-dev-shm-usage`],
       headless: true
-    });
+    })
     const pages = await browser.pages();
     const page = pages[0];
     await page.goto('https://google.com');
