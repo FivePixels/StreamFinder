@@ -52,4 +52,11 @@ export class FilmComponent implements OnInit {
     getPrice(i: number) {
         return this.prices[i];
     }
+
+    getProviderImage(i: number) {
+        console.log(
+            (this.providers[i] as string).toLowerCase().replace(/ /g, '')
+        );
+        return (this.providers[i] as string).toLowerCase().replace(/ /g, '');
+    }
 }

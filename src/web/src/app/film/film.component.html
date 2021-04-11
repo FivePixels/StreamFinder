@@ -43,7 +43,11 @@
                             <div class="card-img">
                                 <img
                                     class="p-3"
-                                    src=" '../../assets/'+'movies pic' "
+                                    [src]="
+                                        '../../assets/img/platforms/' +
+                                        getProviderImage(i) +
+                                        '.png'
+                                    "
                                 />
                             </div>
                             <div class="card_title title-white">
