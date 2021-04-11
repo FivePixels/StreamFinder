@@ -5,6 +5,7 @@ import { of } from 'rxjs';
 import { debounceTime, finalize, map, switchMap, tap } from 'rxjs/operators';
 import { MovieTVService } from '../movie-tv.service';
 import { AppService } from '../app.service';
+import { Router } from '@angular/router';
 @Component({
     selector: 'app-search-bar',
     templateUrl: './search-bar.component.html',
@@ -20,7 +21,8 @@ export class SearchBarComponent implements OnInit {
 
     constructor(
         private appService: AppService,
-        private tmdbService: MovieTVService
+        private tmdbService: MovieTVService,
+        private router: Router
     ) {}
 
     ngOnInit() {
@@ -57,5 +59,9 @@ export class SearchBarComponent implements OnInit {
 
     storeData(model: any) {
         this.appService.subsriber$.subscribe((x) => console.log(x));
+    }
+
+    action(media_type, id) {
+        this.router.navigateByUrl('/page?id=37&username=jimmy');
     }
 }

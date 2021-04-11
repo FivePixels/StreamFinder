@@ -37,22 +37,24 @@
                     </h1>
                     <div class="cards-list pt-4">
                         <div
-                            class="card"
+                            class=""
                             *ngFor="let item of providers; let i = index"
                         >
-                            <div class="card-img">
-                                <img
-                                    class="p-3"
-                                    [src]="
-                                        '../../assets/img/platforms/' +
-                                        getProviderImage(i) +
-                                        '.png'
-                                    "
-                                />
-                            </div>
-                            <div class="card_title title-white">
-                                {{ getPrice(i) }}
-                            </div>
+                            <a [href]="getLink(i)">
+                                <div class="card-img card">
+                                    <img
+                                        class="p-3"
+                                        [src]="
+                                            '../../assets/img/platforms/' +
+                                            getProviderImage(i) +
+                                            '.png'
+                                        "
+                                    />
+                                </div>
+                                <div class="card_title title-white">
+                                    {{ getPrice(i) }}
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
