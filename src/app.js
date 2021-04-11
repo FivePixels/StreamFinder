@@ -1,10 +1,12 @@
 const express = require('express')
 const app = express();
 const morgan = require('morgan');
+const cors = require('cors');
 const { performCheck } = require('./check');
 require('dotenv').config();
 
 app.use(express.json());
+app.use(cors());
 if (process.env.ENV == 'dev') app.use(morgan('dev'));
 
 app.get('/api/performCheck', async (req, res) => {
@@ -18,8 +20,7 @@ app.get('/api/performCheck', async (req, res) => {
         return;
     }
     const { id, query, type } = req.query;
-
-    console.log(`Performing check with ID: ${id} Query: ${query} and Type: ${query}`);
+    console.log(`Performing check with ID: ${id} Query: ${query} and Type: ${type}`);
     res.status(200).json(await performCheck(id, query, type));
     return;
     res.status(200).json({
