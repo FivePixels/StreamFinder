@@ -8,6 +8,9 @@
     background-color: #3f79f6;
 }
 
+.mat-active {
+    background-color: #3f79f6;
+}
 .is-loading ::ng-deep .mat-option-text {
     display: flex;
     justify-content: center;

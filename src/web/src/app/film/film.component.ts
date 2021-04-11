@@ -18,6 +18,40 @@ export class FilmComponent implements OnInit {
     type: string;
     id: string;
     prices;
+    urls = [
+        { name: 'netflix', url: 'https://www.netflix.com/' },
+        { name: 'amazonprimevideo', url: 'https://www.primevideo.com/' },
+        { name: 'appletv', url: 'https://www.apple.com/tv/' },
+        { name: 'boomerang', url: 'https://www.boomerang.com/' },
+        { name: 'cinemax', url: 'https://www.cinemax.com/' },
+        { name: 'discoveryplus', url: 'https://www.discoveryplus.com/' },
+        { name: 'disneyplus', url: 'https://www.disneyplus.com/' },
+        { name: 'epixnow', url: 'https://www.epixnow.com/' },
+        { name: 'fubotv', url: 'https://www.fubo.tv/' },
+        {
+            name: 'googleplaymovies&tv',
+            url: 'https://play.google.com/store/movies',
+        },
+        { name: 'hbomax', url: 'https://www.hbomax.com/' },
+        { name: 'hulu', url: 'https://www.hulu.com/' },
+        { name: 'itunes', url: 'https://www.apple.com/itunes/' },
+        {
+            name: 'lifetimemovieclub',
+            url: 'https://www.lifetimemovieclub.com/',
+        },
+        { name: 'pantaya', url: 'https://www.pantaya.com/en/' },
+        { name: 'paramount', url: 'https://www.paramount.com/' },
+        { name: 'peacock', url: 'https://www.peacocktv.com/' },
+        { name: 'philo', url: 'https://www.philo.com/' },
+        { name: 'showtime', url: 'http://www.showtime.com/' },
+        { name: 'showtimeanytime', url: 'http://www.showtimeanytime.com/' },
+        { name: 'slingtv', url: 'https://www.sling.com/' },
+        { name: 'starz', url: 'https://www.starz.com/us/en/' },
+        { name: 'univision', url: 'https://www.univision.com/' },
+        { name: 'viki', url: 'https://www.viki.com/' },
+        { name: 'youtube', url: 'https://www.youtube.com/' },
+        { name: 'youtubetv', url: 'https://tv.youtube.com/' },
+    ];
     constructor(
         private route: ActivatedRoute,
         private service: MovieTVService,
@@ -58,5 +92,15 @@ export class FilmComponent implements OnInit {
             (this.providers[i] as string).toLowerCase().replace(/ /g, '').replace('+', 'plus')
         );
         return (this.providers[i] as string).toLowerCase().replace(/ /g, '').replace('+', 'plus');
+    }
+
+    getLink(i: number) {
+        let a = (this.providers[i] as string).toLowerCase().replace(/ /g, '');
+        let search = this.urls.find((x) => x.name == a);
+        if (search == undefined || search == null) {
+            return '';
+        } else {
+            return search.url;
+        }
     }
 }
