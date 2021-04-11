@@ -107,6 +107,11 @@ body {
     margin: 20px auto;
 }
 
+.card_title {
+    width: 120px;
+    text-align: center;
+}
+
 .card .card-img {
     width: inherit;
     height: inherit;

@@ -1,5 +1,6 @@
 const puppeteer = require('puppeteer');
 const MongoClient = require('mongodb').MongoClient;
+require('dotenv').config();
 
 // Specifically for scraping
 // Stores in database once finished scraping
@@ -8,7 +9,7 @@ const MongoClient = require('mongodb').MongoClient;
 
 exports.performSearch = async function (id, query, type) {
   try {
-    const uri = "mongodb+srv://user0:8HL0NBINt6B8mIYF@cluster0.kfyrm.mongodb.net/StreamFinder?retryWrites=true&w=majority";
+    const uri = "mongodb+srv://hahaUthought:HhKrH8NbhgrcRScq@cluster0.kfyrm.mongodb.net/StreamFinder?retryWrites=true&w=majority";
     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
     await client.connect();
     const database = client.db("db");

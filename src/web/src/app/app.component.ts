@@ -16,8 +16,7 @@ export class AppComponent implements OnInit {
      */
     constructor(route: Router) {
         this.routes = route.url;
-        console.log(this.routes);
     }
 
-    ngOnInit(): void {}
+    ngOnInit(): void { }
 }

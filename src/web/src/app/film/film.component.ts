@@ -51,6 +51,9 @@ export class FilmComponent implements OnInit {
         { name: 'viki', url: 'https://www.viki.com/' },
         { name: 'youtube', url: 'https://www.youtube.com/' },
         { name: 'youtubetv', url: 'https://tv.youtube.com/' },
+        { name: 'vudu', url: 'https://vudu.com/' },
+        { name: 'nbc', url: 'https://nbc.com/' },
+        { name: 'cartoonnetwork', url: 'https://www.cartoonnetwork.com/video' },
     ];
     constructor(
         private route: ActivatedRoute,
@@ -88,15 +91,12 @@ export class FilmComponent implements OnInit {
     }
 
     getProviderImage(i: number) {
-        console.log(
-            (this.providers[i] as string).toLowerCase().replace(/ /g, '').replace('+', 'plus')
-        );
         return (this.providers[i] as string).toLowerCase().replace(/ /g, '').replace('+', 'plus');
     }
 
     getLink(i: number) {
-        let a = (this.providers[i] as string).toLowerCase().replace(/ /g, '');
-        let search = this.urls.find((x) => x.name == a);
+        let a = (this.providers[i] as string).toLowerCase().replace(/ /g, '').replace('+', 'plus');
+        let search = this.urls.find(x => x.name == a);
         if (search == undefined || search == null) {
             return '';
         } else {

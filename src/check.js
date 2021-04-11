@@ -1,4 +1,5 @@
 const MongoClient = require('mongodb').MongoClient;
+require('dotenv').config();
 
 
 // This is for passing the parameters of the search to check and see if it already exists in the database
@@ -7,7 +8,7 @@ const MongoClient = require('mongodb').MongoClient;
 const scraper = require('./scraper/scrape')
 
 exports.performCheck = async function performCheck(id, query, type) {
-    const uri = "mongodb+srv://user0:8HL0NBINt6B8mIYF@cluster0.kfyrm.mongodb.net/StreamFinder?retryWrites=true&w=majority";
+    const uri = process.env.MONGO_URI;
     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
     var result;
@@ -38,7 +39,7 @@ exports.performCheck = async function performCheck(id, query, type) {
 
 async function performDatabaseSearch(id, type) {
     // do database search
-    const uri = "mongodb+srv://user0:8HL0NBINt6B8mIYF@cluster0.kfyrm.mongodb.net/StreamFinder?retryWrites=true&w=majority";
+    const uri = process.env.MONGO_URI;
     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
     var result;
     await client.connect();
