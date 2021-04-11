@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { filter, map } from 'rxjs/operators';
 import { MovieTVService } from '../movie-tv.service';
 import { AppService } from '../app.service';
+import { ScrapeService } from '../scrape.service';
 
 @Component({
     selector: 'app-film',
@@ -18,7 +19,8 @@ export class FilmComponent implements OnInit {
     id: string;
     constructor(
         private route: ActivatedRoute,
-        private service: MovieTVService
+        private service: MovieTVService,
+        private scraper: ScrapeService
     ) {}
     ngOnInit(): void {
         this.route.paramMap.subscribe((x) => {
@@ -33,9 +35,13 @@ export class FilmComponent implements OnInit {
         });
         this.service.searchById(this.type, +this.id).subscribe((x: any) => {
             this.model = x;
-            this.loading = false;
             console.log(this.model);
         });
+        this.scraper
+            .performCheck(this.id, this.model, this.type)
+            .subscribe((x) => {
+                this.loading = false;
+            });
         //
         //Get Providers List
         /*this.service
