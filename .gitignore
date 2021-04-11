@@ -1,2 +1,4 @@
 node_modules
 .DS_Store
+src/ecosystem.config.js
+src/web/ecosystem.config.js
