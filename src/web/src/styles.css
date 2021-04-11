@@ -86,11 +86,16 @@ body {
     margin-bottom: 10px !important;
 }
 
+.mat-active {
+    background-color: blue;
+}
+
 .cards-list {
     display: flex;
     justify-content: space-around;
     width: 100%;
     flex-wrap: wrap;
+    padding-bottom: 5%;
 }
 
 .card {
@@ -118,11 +123,9 @@ body {
 
 .card .card_title {
     text-align: center;
-    border-radius: 0px 0px 40px 40px;
-    font-family: sans-serif;
     font-weight: bold;
-    font-size: 20px;
-    height: 40px;
+    font-size: 15px !important;
+    margin-top: 15px;
 }
 
 .card:hover {
