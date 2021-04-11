@@ -10,3 +10,4 @@
 Amar Budhathoki
 Michael Gonzalez
 Dylan Bolger
+Thad Berta

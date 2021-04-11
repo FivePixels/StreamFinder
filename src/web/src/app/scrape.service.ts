@@ -5,13 +5,16 @@ import { HttpClient } from '@angular/common/http';
     providedIn: 'root',
 })
 export class ScrapeService {
-    apiURL = 'http://localhost:5000/api/';
-
-    constructor(private service: HttpClient) {}
+    // apiURL = 'http://localhost:5000/api/';
+    apiURL = 'https://streamfind.tech/api/';
+    constructor(private service: HttpClient) { }
 
     performCheck(id, query, type) {
-        return this.service.get(this.apiURL + 'performCheck', {
+        console.log('performCheck(...);');
+        var res = this.service.get(this.apiURL + 'performCheck', {
             params: { id: id, query: query, type: type },
         });
+        console.log(res);
+        return res;
     }
 }

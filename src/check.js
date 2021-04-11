@@ -26,9 +26,11 @@ exports.performCheck = async function performCheck(id, query, type) {
             break;
     }
     if (result == null) {
+        console.log('no db entry found')
         await scraper.performSearch(id, query, type)
     }
     // (if it needed to be scraped, it now is, and its stored. next, we perform the database search for the newly saved entry)
+    console.log('start db search')
     var array = await performDatabaseSearch(id, type); // returns values
     await client.close();
     return array;
@@ -54,5 +56,6 @@ async function performDatabaseSearch(id, type) {
             break;
     }
     client.close()
+    console.log('db search finished')
     return [result.service, result.price]
 }
