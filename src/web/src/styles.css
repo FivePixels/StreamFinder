@@ -57,6 +57,8 @@ body {
 
 .search-item-text .movie-title {
     font-size: 1.5rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .rating {

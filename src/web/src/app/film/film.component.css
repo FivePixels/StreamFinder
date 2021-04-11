@@ -6,21 +6,11 @@
     font-family: "Playfair Display", sans-serif;
 }
 .img-s {
-    width: 100%;
-    overflow-y: scroll;
-    z-index: 0;
-    position: relative;
+    border-radius: 20px;
+    box-shadow: 5px 5px 20px 3px gray, -5px -5px 20px 3px gray;
 }
 .wrapper-content {
-    display: flex;
-    justify-content: center;
     width: 100%;
-    z-index: 100;
-    top: 76px;
-    position: absolute;
-    left: 0;
-    height: 100%;
-    padding: 5% 0px;
 }
 
 .main-div {

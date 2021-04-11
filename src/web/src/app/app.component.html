@@ -5,11 +5,15 @@
     <div
         class="container d-flex flex-column flex-md-row justify-content-between"
     >
-        <i
-            style="font-size: 3rem; color: white"
-            class="bi bi-arrow-left-circle-fill icon float-left"
+        <!-- <i
+            style="font-size: 2.5rem; color: white"
+            [hidden]="
+                !(routes.startsWith('/home/') || routes.startsWith('/tv/'))
+            "
+            class="bi bi-arrow-left icon float-left"
             [routerLink]="['home']"
-        ></i>
+        ></i> -->
+        <span></span>
         <a
             class="py-2 d-flex flex-row align-items-center justify-content-center"
             href="#"

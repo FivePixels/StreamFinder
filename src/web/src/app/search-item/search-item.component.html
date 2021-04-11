@@ -3,12 +3,14 @@
         <img [src]="getImage()" alt="Not Found" class="example-option-img" />
     </div>
     <div class="search-item-text col-sm-8 col-md-8">
-        <div class="movie-title font-weight-bold text-uppercase">
+        <div
+            class="movie-title font-weight-bold text-capitalize overflow-hidden"
+        >
             {{ getTitle() }}
         </div>
         <div class="year-wrapper">
             <small class="year-wrapper-content">
-                {{ getYear() }} | {{ model.media_type | titlecase }}
+                {{ getYear() }} | {{ model.media_type | uppercase }}
             </small>
         </div>
     </div>

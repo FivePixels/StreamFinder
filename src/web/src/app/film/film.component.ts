@@ -18,8 +18,7 @@ export class FilmComponent implements OnInit {
     id: string;
     constructor(
         private route: ActivatedRoute,
-        private service: MovieTVService,
-        private appService: AppService
+        private service: MovieTVService
     ) {}
     ngOnInit(): void {
         this.route.paramMap.subscribe((x) => {
